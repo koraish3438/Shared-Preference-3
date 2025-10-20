@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="16.dp"
+    android:paddingVertical="24.dp"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/darkMode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/dark_mode"
+        android:textSize="18.sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/firstTV"
+        android:layout_width="0.dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:hint="@string/enter_name"
+        app:layout_constraintEnd_toEndOf="@+id/darkMode"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/darkMode"
+        app:layout_constraintTop_toBottomOf="@+id/darkMode">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/firstET"
+            android:textStyle="bold"
+            android:inputType="textPersonName"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/secondTV"
+        android:layout_width="0.dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:hint="@string/enter_age"
+        app:layout_constraintEnd_toEndOf="@+id/firstTV"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/firstTV"
+        app:layout_constraintTop_toBottomOf="@+id/firstTV">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/secondET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textStyle="bold"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/notifySwitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32.dp"
+        android:text="@string/notification"
+        android:textSize="18.sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/secondTV"
+        app:layout_constraintStart_toStartOf="@+id/secondTV"
+        app:layout_constraintTop_toBottomOf="@+id/secondTV" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/saveBtn"
+        android:layout_width="0.dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/save"
+        android:textColor="@color/white"
+        android:textSize="18.sp"
+        android:textStyle="bold"
+        app:cornerRadius="16.dp"
+        app:layout_constraintEnd_toEndOf="@+id/notifySwitch"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notifySwitch" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/clearBtn"
+        android:layout_width="0.dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/clear"
+        android:textColor="@color/white"
+        android:textSize="18.sp"
+        android:textStyle="bold"
+        app:cornerRadius="16.dp"
+        app:layout_constraintEnd_toEndOf="@+id/saveBtn"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/saveBtn"
+        app:layout_constraintTop_toBottomOf="@+id/saveBtn" />
+
+    <TextView
+        android:id="@+id/output"
+        android:layout_width="0.dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:text="@string/saved_none"
+        android:textSize="18.dp"
+
+        app:layout_constraintEnd_toEndOf="@+id/clearBtn"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/clearBtn"
+        app:layout_constraintTop_toBottomOf="@+id/clearBtn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

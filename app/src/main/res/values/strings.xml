@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SharedPreference3</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_age">Enter Age</string>
+    <string name="notification">Notification</string>
+    <string name="save">Save</string>
+    <string name="clear">Clear</string>
+    <string name="saved_none">Saved : (none)</string>
+    <string name="welcome">Welcome!</string>
+</resources>
