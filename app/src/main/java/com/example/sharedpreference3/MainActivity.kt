@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.edit
 import com.example.sharedpreference3.databinding.ActivityMainBinding
+import androidx.core.widget.addTextChangedListener
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,6 +32,24 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         loadPreferences()
+
+        binding.firstET.addTextChangedListener {
+            prefs.edit { putString(KEY_NAME, it.toString()) }
+        }
+
+        binding.secondET.addTextChangedListener {
+            val ageText = it.toString()
+            prefs.edit {
+                if (ageText.isNotEmpty()) {
+                    val age = ageText.toIntOrNull()
+                    if (age != null) {
+                        putInt(KEY_AGE, age)
+                    } else {
+                        remove(KEY_AGE)
+                    }
+                }
+            }
+        }
 
         binding.darkMode.setOnCheckedChangeListener { _, isChecked ->
             prefs.edit { putBoolean(KEY_DARK, isChecked) }
